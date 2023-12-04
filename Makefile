@@ -1,5 +1,5 @@
-FILENAME=vonLaszewski-cloudmesh-cc
-DIR=paper-cloudmesh-cc
+FILENAME=vonLaszewski-cloudmask-related
+DIR=mlcommons-cloudmask-activities
 UPLOAD=upload
 
 # .PHONY: $(FILENAME).pdf
@@ -8,7 +8,7 @@ all: $(FILENAME).pdf
 
 # MAIN LATEXMK RULE
 
-$(FILENAME).pdf: dot $(FILENAME).tex
+$(FILENAME).pdf: 
 	latexmk  -shell-escape -quiet -bibtex $(PREVIEW_CONTINUOUSLY) -f -pdf -pdflatex="pdflatex -synctex=1 -interaction=nonstopmode" -use-make $(FILENAME).tex
 
 .PRECIOUS: %.pdf
@@ -72,9 +72,6 @@ latex: dot
 	pdflatex $(FILENAME)
 	pdflatex $(FILENAME)
 
-
-dot:
-	dot -Tpdf images/cloudmask-wf.dot -o images/cloudmask-wf.pdf
 
 
 word:
