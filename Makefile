@@ -28,7 +28,7 @@ clean:
 	rm -f comment.cut
 	rm -rf *~
 
-regular:
+regular: clean
 	pdflatex $(FILENAME)
 	bibtex $(FILENAME)
 	pdflatex $(FILENAME)
