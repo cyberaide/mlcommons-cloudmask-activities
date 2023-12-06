@@ -302,12 +302,16 @@
                   {https://github.com/mlcommons/science/tree/main/benchmarks/cloudmask}
 }
 
-%TODO
 @inproceedings{Caruana2000OverfittingIN,
+  author =	 {Caruana, Rich and Lawrence, Steve and Giles, C.},
+  booktitle =	 {Advances in Neural Information Processing Systems},
+  editor =	 {T. Leen and T. Dietterich and V. Tresp},
+  publisher =	 {MIT Press},
   title =	 {Overfitting in Neural Nets: Backpropagation,
                   Conjugate Gradient, and Early Stopping},
-  author =	 {Rich Caruana and Steve Lawrence and C. Lee Giles},
-  booktitle =	 {NIPS},
+  url =
+                  {https://proceedings.neurips.cc/paper_files/paper/2000/file/059fdcd96baeb75112f09fa1dcc740cc-Paper.pdf},
+  volume =	 13,
   year =	 2000
 }
 
@@ -366,96 +370,192 @@
                   (http://sendimage.whu.edu.cn/en/mscff/).}
 }
 
-%TODO
 @article{Domnich2021KappaMaskAC,
-  title =	 {KappaMask: AI-Based Cloudmask Processor for
+  AUTHOR =	 {Domnich, Marharyta and Sünter, Indrek and Trofimov,
+                  Heido and Wold, Olga and Harun, Fariha and
+                  Kostiukhin, Anton and Järveoja, Mihkel and Veske,
+                  Mihkel and Tamm, Tanel and Voormansik, Kaupo and
+                  Olesk, Aire and Boccia, Valentina and Longepe,
+                  Nicolas and Cadau, Enrico Giuseppe},
+  TITLE =	 {KappaMask: AI-Based Cloudmask Processor for
                   Sentinel-2},
-  author =	 {Marharyta Domnich and Indrek S{\"u}nter and Heido
-                  Trofimov and Olga Wold and Fariha Harun and Anton
-                  Kostiukhin and Mihkel J{\"a}rveoja and Mihkel Veske
-                  and Tanel Tamm and Kaupo Voormansik and Aire Olesk
-                  and Valentina Boccia and Nicolas Long{\'e}p{\'e} and
-                  Enrico G. Cadau},
-  journal =	 {Remote. Sens.},
-  year =	 2021,
-  volume =	 13,
-  pages =	 4100
+  JOURNAL =	 {Remote Sensing},
+  VOLUME =	 13,
+  YEAR =	 2021,
+  NUMBER =	 20,
+  ARTICLE-NUMBER =4100,
+  URL =		 {https://www.mdpi.com/2072-4292/13/20/4100},
+  ISSN =	 {2072-4292},
+  ABSTRACT =	 {The Copernicus Sentinel-2 mission operated by the
+                  European Space Agency (ESA) provides comprehensive
+                  and continuous multi-spectral observations of all
+                  the Earth’s land surface since mid-2015. Clouds and
+                  cloud shadows significantly decrease the usability
+                  of optical satellite data, especially in
+                  agricultural applications; therefore, an accurate
+                  and reliable cloud mask is mandatory for effective
+                  EO optical data exploitation. During the last few
+                  years, image segmentation techniques have developed
+                  rapidly with the exploitation of neural network
+                  capabilities. With this perspective, the KappaMask
+                  processor using U-Net architecture was developed
+                  with the ability to generate a classification mask
+                  over northern latitudes into the following classes:
+                  clear, cloud shadow, semi-transparent cloud (thin
+                  clouds), cloud and invalid. For training, a
+                  Sentinel-2 dataset covering the Northern European
+                  terrestrial area was labelled. KappaMask provides a
+                  10 m classification mask for Sentinel-2 Level-2A
+                  (L2A) and Level-1C (L1C) products. The total dice
+                  coefficient on the test dataset, which was not seen
+                  by the model at any stage, was 80% for KappaMask L2A
+                  and 76% for KappaMask L1C for clear, cloud shadow,
+                  semi-transparent and cloud classes. A comparison
+                  with rule-based cloud mask methods was then
+                  performed on the same test dataset, where Sen2Cor
+                  reached 59% dice coefficient for clear, cloud
+                  shadow, semi-transparent and cloud classes, Fmask
+                  reached 61% for clear, cloud shadow and cloud
+                  classes and Maja reached 51% for clear and cloud
+                  classes. The closest machine learning open-source
+                  cloud classification mask, S2cloudless, had a 63%
+                  dice coefficient providing only cloud and clear
+                  classes, while KappaMask L2A, with a more complex
+                  classification schema, outperformed S2cloudless by
+                  17%.},
+  DOI =		 {10.3390/rs13204100}
 }
 
+
+
+
+
+
 %TODO
+
 @article{Zhu2012ObjectbasedCA,
   title =	 {Object-based cloud and cloud shadow detection in
                   Landsat imagery},
-  author =	 {Zhe Zhu and Curtis E. Woodcock},
   journal =	 {Remote Sensing of Environment},
-  year =	 2012,
   volume =	 118,
-  pages =	 {83-94}
+  pages =	 {83-94},
+  year =	 2012,
+  issn =	 {0034-4257},
+  doi =		 {https://doi.org/10.1016/j.rse.2011.10.028},
+  url =
+                  {https://www.sciencedirect.com/science/article/pii/S0034425711003853},
+  author =	 {Zhe Zhu and Curtis E. Woodcock},
+  keywords =	 {Landsat, Cloud, Cloud shadow, Fmask, Object-based,
+                  Detection},
+  abstract =	 {A new method called Fmask (Function of mask) for
+                  cloud and cloud shadow detection in Landsat imagery
+                  is provided. Landsat Top of Atmosphere (TOA)
+                  reflectance and Brightness Temperature (BT) are used
+                  as inputs. Fmask first uses rules based on cloud
+                  physical properties to separate Potential Cloud
+                  Pixels (PCPs) and clear-sky pixels. Next, a
+                  normalized temperature probability, spectral
+                  variability probability, and brightness probability
+                  are combined to produce a probability mask for
+                  clouds over land and water separately. Then, the
+                  PCPs and the cloud probability mask are used
+                  together to derive the potential cloud layer. The
+                  darkening effect of the cloud shadows in the Near
+                  Infrared (NIR) Band is used to generate a potential
+                  shadow layer by applying the flood-fill
+                  transformation. Subsequently, 3D cloud objects are
+                  determined via segmentation of the potential cloud
+                  layer and assumption of a constant temperature lapse
+                  rate within each cloud object. The view angle of the
+                  satellite sensor and the illuminating angle are used
+                  to predict possible cloud shadow locations and
+                  select the one that has the maximum similarity with
+                  the potential cloud shadow mask. If the scene has
+                  snow, a snow mask is also produced. For a globally
+                  distributed set of reference data, the average Fmask
+                  overall cloud accuracy is as high as 96.4%. The goal
+                  is development of a cloud and cloud shadow detection
+                  algorithm suitable for routine usage with Landsat
+                  images.}
 }
 
+
 %TODO
+
 @article{Farrell2021MLPerfHA,
-  title =	 {MLPerf{\texttrademark} HPC: A Holistic Benchmark
-                  Suite for Scientific Machine Learning on HPC
-                  Systems},
-  author =	 {Steven Andrew Farrell and Murali Krishna Emani and
-                  Jacob Balma and Lukas Drescher and Aleksandr Drozd
-                  and Andreas Fink and Geoffrey Fox and David Kanter
-                  and Thorsten Kurth and Peter Mattson and Dawei Mu
-                  and Amit Ruhela and Kento Sato and Koichi Shirahata
-                  and Tsuguchika Tabaru and Aristeidis Tsaris and Jan
-                  Balewski and Benjamin Cumming and Takumi Danjo and
-                  Jens Domke and Takaaki Fukai and Naoto Fukumoto and
-                  Tatsuya Fukushi and Balazs Gerofi and Takumi Honda
-                  and Toshiyuki Imamura and Akihiko Kasagi and Kentaro
-                  Kawakami and Shuhei Kudo and Akiyoshi Kuroda and
-                  Maxime Martinasso and Satoshi Matsuoka and Henrique
-                  Mendonc and Kazuki Minami and Prabhat Ram and
-                  Takashi Sawada and Mallikarjun (Arjun) Shankar and
-                  Tom St. John and Akihiro Tabuchi and Venkatram
+  author =	 {Steven Farrell and Murali Emani and Jacob Balma and
+                  Lukas Drescher and Aleksandr Drozd and Andreas Fink
+                  and Geoffrey C. Fox and David Kanter and Thorsten
+                  Kurth and Peter Mattson and Dawei Mu and Amit Ruhela
+                  and Kento Sato and Koichi Shirahata and Tsuguchika
+                  Tabaru and Aristeidis Tsaris and Jan Balewski and
+                  Ben Cumming and Takumi Danjo and Jens Domke and
+                  Takaaki Fukai and Naoto Fukumoto and Tatsuya Fukushi
+                  and Balazs Gerofi and Takumi Honda and Toshiyuki
+                  Imamura and Akihiko Kasagi and Kentaro Kawakami and
+                  Shuhei Kudo and Akiyoshi Kuroda and Maxime
+                  Martinasso and Satoshi Matsuoka and Henrique
+                  Mendon{\c{c}}a and Kazuki Minami and Prabhat Ram and
+                  Takashi Sawada and Mallikarjun Shankar and Tom
+                  St. John and Akihiro Tabuchi and Venkatram
                   Vishwanath and Mohamed Wahib and Masafumi Yamazaki
                   and Junqi Yin},
-  journal =	 {2021 IEEE/ACM Workshop on Machine Learning in High
-                  Performance Computing Environments (MLHPC)},
+  title =	 {MLPerf{\texttrademark} {HPC:} {A} Holistic Benchmark
+                  Suite for Scientific Machine Learning on {HPC}
+                  Systems},
+  booktitle =	 {{IEEE/ACM} Workshop on Machine Learning in High
+                  Performance Computing Environments, MLHPC@SC 2021,
+                  St. Louis, MO, USA, November 15, 2021},
+  pages =	 {33--45},
+  publisher =	 {{IEEE}},
   year =	 2021,
-  pages =	 {33-45}
+  url =		 {https://doi.org/10.1109/MLHPC54614.2021.00009},
+  doi =		 {10.1109/MLHPC54614.2021.00009},
 }
 
-%TODO
 @article{Yan2018CloudAC,
-  title =	 {Cloud and Cloud Shadow Detection Using Multilevel
-                  Feature Fused Segmentation Network},
-  author =	 {Zhiyuan Yan and Menglong Yan and Hao Sun and Kun Fu
-                  and Jun Hong and Jun Sun and Yi Zhang and Xian Sun},
+  author =	 {Yan, Zhiyuan and Yan, Menglong and Sun, Hao and Fu,
+                  Kun and Hong, Jun and Sun, Jun and Zhang, Yi and
+                  Sun, Xian},
   journal =	 {IEEE Geoscience and Remote Sensing Letters},
+  title =	 {Cloud and cloud shadow detection using multilevel
+                  feature fused segmentation network},
   year =	 2018,
   volume =	 15,
-  pages =	 {1600-1604}
+  number =	 10,
+  pages =	 {1600-1604},
+  doi =		 {10.1109/LGRS.2018.2846802}
 }
 
-%TODO
 @article{Saunders1986AnAS,
+  author =	 {Saunders, Roger W. },
   title =	 {An automated scheme for the removal of cloud
                   contamination from AVHRR radiances over western
                   Europe},
-  author =	 {Roger W. Saunders},
   journal =	 {International Journal of Remote Sensing},
-  year =	 1986,
   volume =	 7,
-  pages =	 {867-886}
+  number =	 7,
+  pages =	 {867-886},
+  year =	 1986,
+  publisher =	 {Taylor & Francis},
+  doi =		 {10.1080/01431168608948896},
+  URL =		 { https://doi.org/10.1080/01431168608948896 },
+  eprint =	 { https://doi.org/10.1080/01431168608948896 }
 }
 
-%TODO
 @article{Saunders1988AnIM,
+  author =	 {Saunders, Roger W.  and Kriebel, Karl Theodor },
   title =	 {An improved method for detecting clear sky and
                   cloudy radiances from AVHRR data},
-  author =	 {Roger W. Saunders and Karl Theodor Kriebel},
   journal =	 {International Journal of Remote Sensing},
-  year =	 1988,
   volume =	 9,
-  pages =	 {123-150}
+  number =	 1,
+  pages =	 {123-150},
+  year =	 1988,
+  publisher =	 {Taylor & Francis},
+  doi =		 {10.1080/01431168808954841},
+  URL =		 {https://doi.org/10.1080/01431168808954841},
 }
-
 
 @article{Ronneberger2015UNetCN,
   title =	 {U-Net: Convolutional Networks for Biomedical Image
@@ -594,21 +694,6 @@ urldate = {04/20/2023}
                   {https://docs.google.com/document/d/1LUuVSeLYv-717TJxtyikihLmuyf6at50FNBn57Doo_4/edit#heading=h.7p7jjuq4vbsm}
 }
 
-%TODO DUPLICATE? see next
-@inproceedings{Thiyagalingam2022AIBF-workshop,
-  title =	 {AI Benchmarking for Science: Efforts from the
-                  MLCommons Science Working Group},
-  author =	 {Jeyan Thiyagalingam and G. Laszewski and Junqi Yin
-                  and Murali Krishna Emani and Juri Papay and Gregg
-                  Barrett and Piotr Luszczek and Aristeidis Tsaris and
-                  Christine R. Kirkpatrick and Feiyi Wang and Tom
-                  Gibbs and Venkatram Vishwanath and Mallikarjun
-                  (Arjun) Shankar and Geoffrey C. Fox and Anthony
-                  J. G. Hey},
-  booktitle =	 {ISC Workshops},
-  year =	 2022
-}
-
 @inbook{Thiyagalingam2022AIBF,
   author =	 {Thiyagalingam, Jeyan and von Laszewski, Gregor and
                   Yin, Junqi and Emani, Murali and Papay, Juri and
@@ -630,7 +715,6 @@ urldate = {04/20/2023}
   address =	 {Hamburg, Germany}
 }
 
-% TODO
 @article{Merchant2005ProbabilisticPB,
   title =	 {Probabilistic physically based cloud screening of
                   satellite infrared imagery for operational sea
@@ -638,9 +722,11 @@ urldate = {04/20/2023}
   author =	 {Christopher J. Merchant and Andrew R. Harris and
                   Eileen Maturi and S. Maccallum},
   journal =	 {Quarterly Journal of the Royal Meteorological
-                  Society},
+                  Society, Part A},
   year =	 2005,
-  volume =	 131
+  volume =	 131,
+  month =	 oct,
+  url =		 {https://doi.org/10.1256/qj.05.15}
 }
 
 @article{WIELAND2019111203,
