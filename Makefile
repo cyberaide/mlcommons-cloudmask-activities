@@ -52,7 +52,7 @@ zip:
 	cp $(FILENAME).* $(UPLOAD)
 	cp -r images $(UPLOAD)
 	cp *.pygtex $(UPLOAD)
-	cd upload; zip -x "*/.DS*" "*/*.git*" "*/*bin*" "*/*zip" "*/*.md" "*/Makefile" "*/*.log" "*/*.aux" "*/*.blg" "vonLaszewski-cloudmesh-cc.pdf" -r ../$(FILENAME).zip .
+	cd upload; zip -x "*/.DS*" "*/*.git*" "*/*bin*" "*/*zip" "*/*.md" "*/Makefile" "*/*.log" "*/*.aux" "*/*.blg" "$(FFILENAME).pdf" -r ../$(FILENAME).zip .
 
 flatzip: clean
 	zip -x "*.git*" "*bin*" "*zip" "*.md" "Makefile" -r $(FILENAME).zip .

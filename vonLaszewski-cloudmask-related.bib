@@ -1,3 +1,72 @@
+@misc{jackson-2020-eu,
+author = {Jackson, S. and Thiyagalingam, J. and Cox, C.},
+  title = {A Machine Learning Approach to Cloud Masking in Sentinel-3 SLSTR Data},
+howpublished = {EGU General Assembly 2020, Poster},
+url = {https://doi.org/10.5194/egusphere-egu2020-21593},
+month = may,
+year =2020
+}
+
+@misc{Sentinel84:online,
+author = {{Sentinel-3}},
+  title = {Mission Summary},
+howpublished = {Web Page},
+url = {https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-3/overview/mission-summary},
+month =dec,
+year =2023
+}
+
+@Article{amt-15-7195-2022,
+AUTHOR = {Petracca, I. and De Santis, D. and Picchiani, M. and Corradini, S. and Guerrieri, L. and Prata, F. and Merucci, L. and Stelitano, D. and Del Frate, F. and Salvucci, G. and Schiavon, G.},
+TITLE = {Volcanic cloud detection using Sentinel-3 satellite data by means of neural networks: the Raikoke 2019 eruption test case},
+JOURNAL = {Atmospheric Measurement Techniques},
+VOLUME = {15},
+YEAR = {2022},
+NUMBER = {24},
+PAGES = {7195--7210},
+URL = {https://amt.copernicus.org/articles/15/7195/2022/},
+DOI = {10.5194/amt-15-7195-2022}
+}
+
+@INPROCEEDINGS{picchiani2018,
+  author={Picchiani, Matteo and Del Frate, Fabio and Sist, Massimiliano},
+  booktitle={IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium}, 
+  title={A Neural Network Sea-Ice Cloud Classification Algorithm for Copernicus Sentinel-3 Sea and Land Surface Temperature Radiometer}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={3015-3018},
+  doi={10.1109/IGARSS.2018.8517857}}
+
+
+@article{SKAKUN2022112990,
+title = {Cloud Mask Intercomparison eXercise (CMIX): An evaluation of cloud masking algorithms for Landsat 8 and Sentinel-2},
+journal = {Remote Sensing of Environment},
+volume = {274},
+pages = {112990},
+year = {2022},
+issn = {0034-4257},
+doi = {https://doi.org/10.1016/j.rse.2022.112990},
+url = {https://www.sciencedirect.com/science/article/pii/S0034425722001043},
+author = {Sergii Skakun and Jan Wevers and Carsten Brockmann and Georgia Doxani and Matej Aleksandrov and Matej Batič and David Frantz and Ferran Gascon and Luis Gómez-Chova and Olivier Hagolle and Dan López-Puigdollers and Jérôme Louis and Matic Lubej and Gonzalo Mateo-García and Julien Osman and Devis Peressutti and Bringfried Pflug and Jernej Puc and Rudolf Richter and Jean-Claude Roger and Pat Scaramuzza and Eric Vermote and Nejc Vesel and Anže Zupanc and Lojze Žust},
+keywords = {Cloud, Intercomparison, Validation, Landsat 8, Sentinel-2, CMIX, CEOS},
+abstract = {Cloud cover is a major limiting factor in exploiting time-series data acquired by optical spaceborne remote sensing sensors. Multiple methods have been developed to address the problem of cloud detection in satellite imagery and a number of cloud masking algorithms have been developed for optical sensors but very few studies have carried out quantitative intercomparison of state-of-the-art methods in this domain. This paper summarizes results of the first Cloud Masking Intercomparison eXercise (CMIX) conducted within the Committee Earth Observation Satellites (CEOS) Working Group on Calibration & Validation (WGCV). CEOS is the forum for space agency coordination and cooperation on Earth observations, with activities organized under working groups. CMIX, as one such activity, is an international collaborative effort aimed at intercomparing cloud detection algorithms for moderate-spatial resolution (10–30 m) spaceborne optical sensors. The focus of CMIX is on open and free imagery acquired by the Landsat 8 (NASA/USGS) and Sentinel-2 (ESA) missions. Ten algorithms developed by nine teams from fourteen different organizations representing universities, research centers and industry, as well as space agencies (CNES, ESA, DLR, and NASA), are evaluated within the CMIX. Those algorithms vary in their approach and concepts utilized which were based on various spectral properties, spatial and temporal features, as well as machine learning methods. Algorithm outputs are evaluated against existing reference cloud mask datasets. Those datasets vary in sampling methods, geographical distribution, sample unit (points, polygons, full image labels), and generation approaches (experts, machine learning, sky images). Overall, the performance of algorithms varied depending on the reference dataset, which can be attributed to differences in how the reference datasets were produced. The algorithms were in good agreement for thick cloud detection, which were opaque and had lower uncertainties in their identification, in contrast to thin/semi-transparent clouds detection. Not only did CMIX allow identification of strengths and weaknesses of existing algorithms and potential areas of improvements, but also the problems associated with the existing reference datasets. The paper concludes with recommendations on generating new reference datasets, metrics, and an analysis framework to be further exploited and additional input datasets to be considered by future CMIX activities.}
+}
+
+@article{FERNANDEZMORAN2021238,
+title = {Towards a novel approach for Sentinel-3 synergistic OLCI/SLSTR cloud and cloud shadow detection based on stereo cloud-top height estimation},
+journal = {ISPRS Journal of Photogrammetry and Remote Sensing},
+volume = {181},
+pages = {238-253},
+year = {2021},
+issn = {0924-2716},
+doi = {https://doi.org/10.1016/j.isprsjprs.2021.09.013},
+url = {https://www.sciencedirect.com/science/article/pii/S0924271621002458},
+author = {Roberto Fernandez-Moran and Luis Gómez-Chova and Luis Alonso and Gonzalo Mateo-García and Dan López-Puigdollers},
+keywords = {Cloud mask, Cloud shadow, Cloud detection, Sentinel-3, Cloud top height, OLCI, SLSTR},
+abstract = {Sentinel-3 is an Earth observation satellite constellation launched by the European Space Agency. Each satellite carries two optical multispectral instruments: the Ocean and Land Colour Instrument (OLCI) and the Sea and Land Surface Temperature Radiometer (SLSTR). OLCI and SLSTR sensors produce images covering the visible and infrared spectrum that can be collocated in order to generate synergistic products. In Earth observation, a particular weakness of optical sensors is their high sensitivity to clouds and their shadows. An incorrect cloud and cloud shadow detection leads to mistakes in both land and ocean retrievals of biophysical parameters. In order to exploit both OLCI and SLSTR capabilities, image co-registration at ground level is needed. However, applying such collocation of the images results in cloud location mismatches due to the different viewing angles of OLCI and SLSTR, which complicates the synergistic cloud detection. This study seeks to provide a solution to correctly obtain the projected clouds based on the estimation of cloud top heights in order to better collocate clouds between sensors and detect their shadows. The study presents a forward and backward method to estimate the real nadir position of a cloud on the satellite image starting from an existing cloud mask, as well as the corresponding cloud projections on the surface depending on the solar and sensor viewing angles. The estimation of cloud top heights is based on differences in the cloud projections from SLSTR nadir and oblique views. Experimental results show that the stereo cloud matching based on maximum cross-correlation between SLSTR nadir and oblique spectra was the most robust method to match SLSTR clouds for both nadir and oblique views as compared to spectral distance and spectral angle minimization. We test the method over several images around the world, leading to higher overall accuracy (OA) as compared to Sentinel-3 official products, both in detecting SLSTR clouds and OLCI cloud shadows (SLSTR nadir OA = 93.6%, SLSTR oblique OA = 88.7%, OLCI cloud shadow OA = 93.9% for the stereo matcher, against 82.2%, 81.3% and 90.5%, respectively, for the official Sentinel-3 products). This study also provides a starting point in the development of a cloud screening approach for the upcoming Fluorescence Explorer (FLEX) satellite mission, expected to fly in tandem with Sentinel-3.}
+}
+
 @article{las-2023-mlcommons-edu-eq,
  author = {von Laszewski, Gregor and Fleischer, J.P. and Knuuti, R. and Fox, G.C. and Kolessar, J. and Butler, T.S. and Fox, J.},
  journal = {Frontiers in High Performance Computing,},
