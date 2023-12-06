@@ -168,11 +168,9 @@ The gradual transition away from threshold screening methods was due to its long
 
 The Bayesian approach applies Bayes' theorem on prior meteorology information to deduce for each pixel the probability of containing cloud or clear sky, and thereafter generating a cloud mask as output. As a result, these Bayesian approaches are fully probabilistic and make good use of prior information. Compared to threshold tests, Bayesian methods achieve better accuracy in predicting pixels' cloudiness, offering generality and conceptual clarity in its approach, and enhancing maintainability and adaptability largely \cite{Merchant2005ProbabilisticPB}. 
 
-More recently, the rising popularity of deep learning has led to the use of CNNs for generating cloud masks. Deep learning methods \cite{Li2019DeepLB,Domnich2021KappaMaskAC,Yan2018CloudAC,WIELAND2019111203,JEPPESEN2019247} use computer vision models (CNNs) and treat the cloud mask task as that of image segmentation tasks. CNNs have achieved superior performance thanks to their automatic feature extraction ability. A research paper published in 2019 \cite{JEPPESEN2019247} introduces Remote Sensing Network (RS-Net), which is a CNN architecture branched out of U-Net \cite{Ronneberger2015UNetCN} for cloud masking and was shown to achieve higher performance compared to the state-of-the-art rule-based approach known as Fmask \cite{Zhu2012ObjectbasedCA}. KappaMask \cite{Domnich2021KappaMaskAC} and MSCFF \cite{Li2019DeepLB} are two additional U-Net based CNN model that outperformed Fmask. All these models have reported their performances on several satellite images such as Sentinel-2, Landsat, etc., and also made use of human-annotated (some assisted by software) ground truth values (See ). On the other hand, MLCommons Cloud Mask Benchmark operates on SLSTR images from the newer Sentinel-3 satellite, which uses Bayesian approach generated cloud masks as ground truth. The reference implementation provided by MLCommons Science Working Group achieved 92\% classification accuracy on the Sentinel-3 test set \cite{Thiyagalingam2022AIBF}.
+More recently, the rising popularity of deep learning has led to the use of CNNs for generating cloud masks. Deep learning methods \cite{Li2019DeepLB,Domnich2021KappaMaskAC,Yan2018CloudAC,WIELAND2019111203,JEPPESEN2019247} use computer vision models (CNNs) and treat the cloud mask task as that of image segmentation tasks. CNNs have achieved superior performance thanks to their automatic feature extraction ability. A research paper published in 2019 \cite{JEPPESEN2019247} introduces Remote Sensing Network (RS-Net), which is a CNN architecture branched out of U-Net \cite{Ronneberger2015UNetCN} for cloud masking and was shown to achieve higher performance compared to the state-of-the-art rule-based approach known as Fmask \cite{Zhu2012ObjectbasedCA}. KappaMask \cite{Domnich2021KappaMaskAC} and MSCFF \cite{Li2019DeepLB} are two additional U-Net based CNN model that outperformed Fmask. All these models have reported their performances on several satellite images such as Sentinel-2, Landsat, etc., and also made use of human-annotated (some assisted by software) ground truth values (See in Table \ref{tab:datasets}). On the other hand, MLCommons Cloud Mask Benchmark operates on SLSTR images from the newer Sentinel-3 satellite, which uses Bayesian approach generated cloud masks as ground truth. The reference implementation provided by MLCommons Science Working Group achieved 92\% classification accuracy on the Sentinel-3 test set \cite{Thiyagalingam2022AIBF}.
 
-The aforementioned deep learning approaches towards cloud masking are by no means exhaustive. If you know about other significant cloud masking or deep learning approaches, please inform us and we will add them here.
-
-We provide a short overview of related work regarding the observation data gathering. The data originates from different instruments/satellites. The list of datasets is shown in Table \ref{tab:datasets}.  
+The aforementioned deep learning approaches towards cloud masking are by no means exhaustive. If you know about other significant cloud masking or deep learning approaches, please inform us and we will add them here. 
 
 \begin{table*}[htb]
     \centering
@@ -200,12 +198,12 @@ We provide a short overview of related work regarding the observation data gathe
 \section{Dataset} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-For this study we use data from Sentinel-3. However, we also list additional related research potentially using other data. 
+For MLCommons Cloud Mask Benchmark, we use the satellite images from Sentinel-3. 
 
 \subsection{Sentinel-3}
 
 According to \cite{Sentinel84:online}
-``Sentinel-3 is an ocean and land mission composed of two identical satellites (Sentinel-3A and Sentinel-3B). 
+``Sentinel-3 is an ocean and land mission composed of two identical satellites (Sentinel-3A and Sentinel-3B).''
 
 Sentinel-3 makes use of multiple sensing instruments to accomplish its objectives:
 
@@ -218,8 +216,8 @@ Sentinel-3 makes use of multiple sensing instruments to accomplish its objective
 
 \end{itemize}
 
-SLSTR and OLCI are optical instruments that are used to provide data continuity for ENVISAT's AATSR and MERIS instruments and the swaths of the two instruments overlap, allowing for new combined applications. OLCI is a medium-resolution imaging spectrometer, using five cameras to provide a wide field of view.
-SRAL, DORIS, MWR and LRR are used for topographic measurements of the ocean and inland water.''
+``SLSTR and OLCI are optical instruments that are used to provide data continuity for ENVISAT's AATSR and MERIS instruments and the swaths of the two instruments overlap, allowing for new combined applications. OLCI is a medium-resolution imaging spectrometer, using five cameras to provide a wide field of view.
+SRAL, DORIS, MWR and LRR are used for topographic measurements of the ocean and inland water.'' \cite{Sentinel84:online}
 
 One of the satellites is shown in Figure~\ref{fig:sat}. The 
 Mission Orbit is 
@@ -257,19 +255,17 @@ The images are of the dimension $1200 \times 1500$ with 15 different channels an
 
 \subsection{Data Loading and Preprocessing} \label{Preprocessing}
 
-For training data preprocessing, the images are first cropped from the dimension of $1200 \times 1500 \times 9$ to $1024 \times 1280 \times 9$ and then divided into 20 smaller-sized $256 \times 256 \times 9$ patches. After creating these patches out of each individual image in training set, we get a total of $19,400$ patches for training. These patches are further split into training and validation set with $80/20$ split ratio, and then sent for training after shuffling. 
+For training data preprocessing, the images are first cropped from the dimension of $1200 \times 1500 \times 9$ to $1024 \times 1280 \times 9$ and then divided into 20 smaller-sized $256 \times 256 \times 9$ patches. After creating these patches out of each image in training set, we get a total of $19400$ patches for training. These patches are further split into training and validation set with $80/20$ split ratio, and then sent for training after shuffling. 
 
-For the test set, the images are neither cropped nor shuffled. Instead, each test image are cut into 63 smaller patches of $256 \times 256 \times 9$, by applying a horizontal and vertical stride of 176 pixels with zeros padding on the right and bottom edges of each image. We then get a total of $6300$ patches for each test image. After getting the predictions from the model, these $256 \times 256 \times 1$ output patches (cloud mask) are reconstructed to the size of $1200 \times 1500 \times 1$ and then evaluated with the Bayesian mask ground truth that has the same dimension. This preprocessing pipelines for training and testing are shown in Figure \ref{fig:preprocessing-training} and Figure \ref{fig:preprocessing-testing}.
+For the test dataset, the images are neither cropped nor shuffled. Instead, each test image are cut into 63 smaller patches of dimension $256 \times 256 \times 9$, by applying a horizontal and vertical stride of 176 pixels with zeros padding on the right and bottom edges of each image. We then get a total of $6300$ patches for entire test dataset. After getting the predictions from the model, these $256 \times 256 \times 1$ output patches (predicted cloud mask) are reconstructed to the size of $1200 \times 1500 \times 1$ and then evaluated with the Bayesian mask ground truth that has the same dimension. This preprocessing pipelines for training and testing are shown in Figure \ref{fig:preprocessing-training} and Figure \ref{fig:preprocessing-testing}.
 
 \subsection{Training}
 
-During training, the model takes a preprocessed patch of dimension $256 \times 256 \times 9$, and generates a cloud mask of dimension $256 \times 256 \times 1$. Once the cloud masks have been generated by the model during training, the accuracy is reported as the number of pixels that are correctly classified compared to ground truth. 
+During training, the model takes a preprocessed patch of dimension $256 \times 256 \times 9$, and generates a cloud mask of dimension $256 \times 256 \times 1$. Once the cloud masks have been generated by the model during training, the accuracy is reported as the percentage of total pixels that are correctly classified compared to ground truth. 
 
 \subsection{Testing}
 
-During testing, the model first generates a cloud mask for each $256 \times 256 \times 9$ patch, where the testing image goes through the same preprocessing step as described above in section \ref{Preprocessing}. 
-
-For each pixel in the image, the model outputs a probability of that pixel containing clear sky. Pixels that have a probability larger than 50\% are labeled as clear sky, and cloudy otherwise. Then, those images are then reconstructed back to full-size masks of dimension $1200 \times 1500 \times 1$. 
+During testing, the model generates a cloud mask of dimension $256 \times 256 \times 1$ for each $256 \times 256 \times 9$ patch. For each pixel in the image, the model outputs a probability of that pixel containing clear sky. Pixels that have a probability larger than 50\% are labeled as clear sky, and cloudy otherwise. Then, those images are then reconstructed back to full-size masks of dimension $1200 \times 1500 \times 1$. 
 
 The locations of the images used in the testing are depicted in Figure~\ref{fig:frames-inference} as well as their coordinate centers in Figure~\ref{fig:frames-dot}. As one can observe from the figures, most of the testing images are captured in the region of North Altantic Ocean and of the West Coast of Europe.
 Furthermore, we display in Figure \ref{fig:frames-raw} the raw satellite images from the Sentinel-3 database that reflect the locations where the testing images are located. Figure \ref{fig:frames-mask} shows the cloud masks of the testing images.
