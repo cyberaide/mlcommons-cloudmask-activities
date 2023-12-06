@@ -265,7 +265,7 @@ During training, the model takes a preprocessed patch of dimension $256 \times 2
 
 \subsection{Testing}
 
-During testing, the model generates a cloud mask of dimension $256 \times 256 \times 1$ for each $256 \times 256 \times 9$ patch. For each pixel in the image, the model outputs a probability of that pixel containing clear sky. Pixels that have a probability larger than 50\% are labeled as clear sky, and cloudy otherwise. Then, those images are then reconstructed back to full-size masks of dimension $1200 \times 1500 \times 1$. 
+During testing, the model generates a cloud mask of dimension $256 \times 256 \times 1$ for each $256 \times 256 \times 9$ patch. For each pixel in the image, the model outputs the probability of that pixel containing clear sky. Pixels that have a probability higher than 50\% are labeled as clear sky, and cloudy otherwise. Then, those patches are then reconstructed back to full-size masks of dimension $1200 \times 1500 \times 1$. 
 
 The locations of the images used in the testing are depicted in Figure~\ref{fig:frames-inference} as well as their coordinate centers in Figure~\ref{fig:frames-dot}. As one can observe from the figures, most of the testing images are captured in the region of North Altantic Ocean and of the West Coast of Europe.
 Furthermore, we display in Figure \ref{fig:frames-raw} the raw satellite images from the Sentinel-3 database that reflect the locations where the testing images are located. Figure \ref{fig:frames-mask} shows the cloud masks of the testing images.
@@ -300,7 +300,7 @@ The Table \ref{tab:inference} shows the individual attributes for the specific l
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In this paper, we provide a list of related activities under MLCommons Cloud Mask Benchmark. The paper includes an overview of related research in the field of cloud mask in general. In addition, the paper provides a walk-through and illustration of the Sentinel-3 satellite image dataset we use for benchmark purposes. With this paper, we hope to enhance communication between activities on this benchmark and support others to have an easier time getting started with the MLCommons Cloud Mask benchmark.
+In this paper, we provide a list of related activities under MLCommons Cloud Mask Benchmark. The paper includes an overview of related research in the field of cloud masking in general. In addition, the paper provides a walk-through and illustration of the Sentinel-3 satellite image dataset used for MLCommons Cloud Mask Benchmark. With this paper, we hope to enhance communication between activities on this benchmark and support others to have an easier time getting started with the MLCommons Cloud Mask benchmark.
 
 \begin{acks}
 
@@ -357,14 +357,18 @@ Ruochen Gu has conducted the work of identifying related research as a student r
 \end{comment}
 
 
+\clearpage
 
 \appendix
 
 
 \onecolumn
 
+\section{Table of Locations Used for Inference}
+
 \input{mask-table}
 
+% \clearpage
 
 \section{Naming Convention}
 
