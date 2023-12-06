@@ -117,7 +117,7 @@ As of this moment, we are aware of several activities regarding MLCommons Cloud 
 
 \begin{enumerate}
 \item The original benchmark was contributed by Samuel Jackson and Juri Papaya \cite{Thiyagalingam2022AIBF,jackson-2020-eu} from Rutherford Labs.
-The reference implementation is based on U-Net \cite{Ronneberger2015UNetCN}. 
+The reference implementation is based on U-Net \cite{RFB15a}. 
 
 \item A cloud mask benchmark activity by Junji Yin on PEARL \cite{Thiyagalingam2022AIBF}.
 
@@ -168,7 +168,7 @@ The gradual transition away from threshold screening methods was due to its long
 
 The Bayesian approach applies Bayes' theorem on prior meteorology information to deduce for each pixel the probability of containing cloud or clear sky, and thereafter generating a cloud mask as output. As a result, these Bayesian approaches are fully probabilistic and make good use of prior information. Compared to threshold tests, Bayesian methods achieve better accuracy in predicting pixels' cloudiness, offering generality and conceptual clarity in its approach, and enhancing maintainability and adaptability largely \cite{Merchant2005ProbabilisticPB}. 
 
-More recently, the rising popularity of deep learning has led to the use of CNNs for generating cloud masks. Deep learning methods \cite{Li2019DeepLB,Domnich2021KappaMaskAC,Yan2018CloudAC,WIELAND2019111203,JEPPESEN2019247} use computer vision models (CNNs) and treat the cloud mask task as that of image segmentation tasks. CNNs have achieved superior performance thanks to their automatic feature extraction ability. A research paper published in 2019 \cite{JEPPESEN2019247} introduces Remote Sensing Network (RS-Net), which is a CNN architecture branched out of U-Net \cite{Ronneberger2015UNetCN} for cloud masking and was shown to achieve higher performance compared to the state-of-the-art rule-based approach known as Fmask \cite{Zhu2012ObjectbasedCA}. KappaMask \cite{Domnich2021KappaMaskAC} and MSCFF \cite{Li2019DeepLB} are two additional U-Net based CNN model that outperformed Fmask. All these models have reported their performances on several satellite images such as Sentinel-2, Landsat, etc., and also made use of human-annotated (some assisted by software) ground truth values (See in Table \ref{tab:datasets}). On the other hand, MLCommons Cloud Mask Benchmark operates on SLSTR images from the newer Sentinel-3 satellite, which uses Bayesian approach generated cloud masks as ground truth. The reference implementation provided by MLCommons Science Working Group achieved 92\% classification accuracy on the Sentinel-3 test set \cite{Thiyagalingam2022AIBF}.
+More recently, the rising popularity of deep learning has led to the use of CNNs for generating cloud masks. Deep learning methods \cite{Li2019DeepLB,Domnich2021KappaMaskAC,Yan2018CloudAC,WIELAND2019111203,JEPPESEN2019247} use computer vision models (CNNs) and treat the cloud mask task as that of image segmentation tasks. CNNs have achieved superior performance thanks to their automatic feature extraction ability. A research paper published in 2019 \cite{JEPPESEN2019247} introduces Remote Sensing Network (RS-Net), which is a CNN architecture branched out of U-Net \cite{RFB15a} for cloud masking and was shown to achieve higher performance compared to the state-of-the-art rule-based approach known as Fmask \cite{Zhu2012ObjectbasedCA}. KappaMask \cite{Domnich2021KappaMaskAC} and MSCFF \cite{Li2019DeepLB} are two additional U-Net based CNN model that outperformed Fmask. All these models have reported their performances on several satellite images such as Sentinel-2, Landsat, etc., and also made use of human-annotated (some assisted by software) ground truth values (See in Table \ref{tab:datasets}). On the other hand, MLCommons Cloud Mask Benchmark operates on SLSTR images from the newer Sentinel-3 satellite, which uses Bayesian approach generated cloud masks as ground truth. The reference implementation provided by MLCommons Science Working Group achieved 92\% classification accuracy on the Sentinel-3 test set \cite{Thiyagalingam2022AIBF}.
 
 The aforementioned deep learning approaches towards cloud masking are by no means exhaustive. If you know about other significant cloud masking or deep learning approaches, please inform us and we will add them here. 
 
@@ -632,4 +632,12 @@ S3A_SL_1_RBT____20191031T231742_20191031T232042_20191102T034613_0179_051_073_054
 \endinput
 %%
 %% End of file `sample-sigplan.tex'.
+
+Warning--page numbers missing in both pages and numpages fields in Domnich2021KappaMaskAC
+
+Warning--no journal in Farrell2021MLPerfHA
+
+Warning--no number and no volume in Farrell2021MLPerfHA
+
+Warning--page numbers missing in both pages and numpages fields in Merchant2005ProbabilisticPB
 
