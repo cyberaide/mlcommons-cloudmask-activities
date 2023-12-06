@@ -45,13 +45,14 @@ biber:
 	biber -V --tool vonlaszewski.bib | fgrep -v INFO
 	@make -f Makefile clean
 
-zip:
+zip: clean regular
 	rm -rf *.zip
 	rm -rf $(UPLOAD)
 	mkdir -p $(UPLOAD)
 	cp $(FILENAME).* $(UPLOAD)
+	cp *.tex $(UPLOAD)
+	cp *.bib $(UPLOAD)
 	cp -r images $(UPLOAD)
-	cp *.pygtex $(UPLOAD)
 	cd upload; zip -x "*/.DS*" "*/*.git*" "*/*bin*" "*/*zip" "*/*.md" "*/Makefile" "*/*.log" "*/*.aux" "*/*.blg" "$(FFILENAME).pdf" -r ../$(FILENAME).zip .
 
 flatzip: clean
