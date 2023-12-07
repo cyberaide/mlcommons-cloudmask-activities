@@ -53,21 +53,22 @@ zip: clean regular
 	cp *.tex $(UPLOAD)
 	cp *.bib $(UPLOAD)
 	cp -r images $(UPLOAD)
-	cd upload; zip -x "*/.DS*" "*/*.git*" "*/*bin*" "*/*zip" "*/*.md" "*/Makefile" "*/*.log" "*/*.aux" "*/*.blg" "$(FFILENAME).pdf" -r ../$(FILENAME).zip .
+	cd upload; zip -x "*/.DS*" "*/*.git*" "*/*bin*" "*/*zip" "*/*.md" "*/Makefile" "*/*.log" "*/*.aux" "*/*.blg" "$(FILENAME).pdf" -r ../$(FILENAME).zip .
 
 flatzip: clean
 	zip -x "*.git*" "*bin*" "*zip" "*.md" "Makefile" -r $(FILENAME).zip .
 
 publish:
-	cp $(FILENAME).pdf ../../laszewski/laszewski.github.io/papers/
-	cd ../../laszewski/laszewski.github.io/papers; git add $(FILENAME).pdf
-	cd ../../laszewski/laszewski.github.io/papers; git commit -m "update $(FILENAME)" $(FILENAME).pdf
-	cd ../../laszewski/laszewski.github.io/papers; git push
+	cp $(FILENAME).pdf ../../laszewski/papers/
+	cd ../../laszewski/papers; git pull
+	cd ../../laszewski/papers; git add $(FILENAME).pdf
+	cd ../../laszewski/papers; git commit -m "update $(FILENAME)" $(FILENAME).pdf
+	cd ../../laszewski/papers; git push
 
-p: dot
+p: 
 	pdflatex -shell-escape $(FILENAME)
 
-latex: dot
+latex:
 	pdflatex $(FILENAME)
 	bibtex $(FILENAME)
 	pdflatex $(FILENAME)

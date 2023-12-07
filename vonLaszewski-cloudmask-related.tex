@@ -2,12 +2,30 @@
 
 \input{cloudmask-report-format}
 
+%\setcopyright{acmcopyright}
+%\copyrightyear{2018}
+%\acmYear{2018}
+%\acmDOI{XXXXXXX.XXXXXXX}
+
+\acmConference[MLCommons Science Working Group Report]{MLCommons CloudMask Benchmark with Early Stopage }{Jun. 30,  revised 7 Dec. 2023}{Charlottesville, VA}
+
+%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%  June 03--05, 2018, Woodstock, NY} 
+%\acmPrice{15.00}
+%\acmISBN{978-1-4503-XXXX-X/18/06}
+
+%%\acmSubmissionID{123-A56-BU3}
+
+%%\citestyle{acmauthoryear}
+
 \begin{document}
 
 \newcommand{\TITLE}{An Overview of MLCommons Cloud Mask Benchmark: \\ Related Research and Data \\ {\normalsize Version 1.0}}
 
 \title[Overview of MLCommons Cloud Mask: Related Research]{\TITLE}
-\titlenote{\url{https://raw.githubusercontent.com/cyberaide/paper-mlcommons-cloudmask-activities/raw/vonLaszewski-cloudmask-related.pdf}, \url{https://arxiv.org/submit/5278659/view}}
+% \titlenote{\url{https://github.com/laszewski/papers/raw/master/vonLaszewski-cloudmask-related.pdf}, \url{https://arxiv.org/submit/5278659/view}}
+\titlenote{\url{https://github.com/laszewski/papers/raw/master/vonLaszewski-cloudmask-related.pdf}}
+
 
 \author{Gregor von Laszewski}
 \email{laszewski@gmail.com}
@@ -83,7 +101,7 @@ This overview is produced with the hope that others will have an easier time get
 \keywords{cloudmask, cloudmesh, datasets, MLCommons, benchmark}
 
 
-\received[Version from]{8. June , revised 14 November, 2023}
+\received[Version from]{8. June, revised 7 December, 2023}
 
 \begin{comment}
     
@@ -124,17 +142,19 @@ The reference implementation is based on U-Net \cite{RFB15a}.
 
 \item A cloud mask benchmark activity by Junji Yin on PEARL \cite{Thiyagalingam2022AIBF}.
 
-\item A number of activities carried out by Gregor von Laszewski on Rivanna, University of Virginia's High Performance Computing Cluster ("HPC"). This activity contains significant contribution. 
+\item A number of activities carried out by Gregor von Laszewski on Rivanna, University of Virginia's High Performance Computing Cluster. This activity contains significant contributions: 
 
     \begin{enumerate} 
 
-    \item Introduction of target directories that showcase how to use templates to run cloud mask benchmark on various HPC machines, DGX station, and a Linux desktop with an NVIDIA card.
+    \item Introduction of a README to showcase how to run the code that has been reused and modified successfully by others.
+      
+    \item Introduction of target directories that showcase how to use templates to run cloudmask benchmarks on various HPC machines, DGX station, and a Linux desktop with an NVIDIA card.
 
     \item Introduction of enhanced timers to measure execution time for different parts of the benchmark program.
 
     \item Usage of Cloudmesh StopWatch to provide easy human readable timers that can be parsed with little effort through exports as CSV data.
 
-    \item Development and usage of a hyper-parameter permutation framework that enables the cloud mask model to be experimented with different hyper-parameters, including epochs, batch sizes, learning rates, etc. This work is also reused in other MLCommons Science Benchmarks \cite{las22-cloudmesh-cc-reu}.
+    \item Development and usage of a hyper-parameter permutation framework that enables the cloud mask model to be experimented with different hyper-parameters, including epochs, batch sizes, learning rates, etc. This work is also reused in other MLCommons Science Benchmarks \cite{las22-cloudmesh-cc-reu}. The work simplies benchmark results following the FAIR principal while integrating the hyperparameters as metadata.
 
     \item Development of a workflow system that enables the use of hybrid compute resources through templates \cite{las-2023-escience-cloudmask}.
 
