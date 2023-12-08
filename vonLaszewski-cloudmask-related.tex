@@ -57,9 +57,16 @@ Town Center Four\\
 
 \begin{abstract}
 
-Cloud masking is a crucial task that is well-motivated for meteorology and its applications in environmental and atmospheric sciences. Its goal is, given satellite images, to accurately generate cloud masks that identify each pixel in image to contain either cloud or clear sky. 
-In this paper, we summarize some of the ongoing research activities in cloud masking, with a focus on the research and benchmark currently conducted in MLCommons Science Working Group.
-This overview is produced with the hope that others will have an easier time getting started and collaborate on the activities related to MLCommons Cloud Mask Benchmark.
+  Cloud masking is a crucial task that is well-motivated for
+  meteorology and its applications in environmental and atmospheric
+  sciences. Its goal is, given satellite images, to accurately
+  generate cloud masks that identify each pixel in image to contain
+  either cloud or clear sky.  In this paper, we summarize some of the
+  ongoing research activities in cloud masking, with a focus on the
+  research and benchmark currently conducted in MLCommons Science
+  Working Group.  This overview is produced with the hope that others
+  will have an easier time getting started and collaborate on the
+  activities related to MLCommons Cloud Mask Benchmark.
 
 \end{abstract}
 
@@ -128,53 +135,95 @@ This overview is produced with the hope that others will have an easier time get
 
 \nocite{las-2023-ai-workflow} % add to avoid running bibtex multiple times
 
-The Cloud Mask Benchmark is part of the research currently conducted by MLCommons \cite{Farrell2021MLPerfHA} Science Working Group \cite{www-mlcommons-science-github}. 
-We hope that others will contribute to this 
-document to enhance its scope. Please contact Gregor von Laszewski (laszewski@gmail.com) 
-so that we can coordinate with you.
+The Cloud Mask Benchmark is part of the research currently conducted
+by MLCommons \cite{Farrell2021MLPerfHA} Science Working Group
+\cite{www-mlcommons-science-github}.  We hope that others will
+contribute to this document to enhance its scope. Please contact
+Gregor von Laszewski (laszewski@gmail.com) so that we can coordinate
+with you.
 
-As of this moment, we are aware of several activities regarding MLCommons Cloud Mask Benchmark.
+As of this moment, we are aware of several activities regarding
+MLCommons Cloud Mask Benchmark.
 
 
 \begin{enumerate}
-\item The original benchmark was contributed by Samuel Jackson and Juri Papaya \cite{Thiyagalingam2022AIBF,jackson-2020-eu} from Rutherford Labs.
-The reference implementation is based on U-Net \cite{RFB15a}. 
+  
+\item The original benchmark was contributed by Samuel Jackson and
+  Juri Papaya \cite{Thiyagalingam2022AIBF,jackson-2020-eu} from
+  Rutherford Labs.  The reference implementation is based on U-Net
+  \cite{RFB15a}.
 
-\item A cloud mask benchmark activity by Junji Yin on PEARL \cite{Thiyagalingam2022AIBF}.
+\item A cloud mask benchmark activity by Junji Yin on PEARL
+  \cite{Thiyagalingam2022AIBF}.
 
-\item A number of activities carried out by Gregor von Laszewski on Rivanna, University of Virginia's High Performance Computing Cluster. This activity contains significant contributions: 
+\item A number of activities carried out by Gregor von Laszewski on
+  Rivanna, University of Virginia's High Performance Computing
+  Cluster. This activity contains significant contributions:
 
     \begin{enumerate} 
 
-    \item Introduction of a README to showcase how to run the code that has been reused and modified successfully by others.
+    \item Introduction of a README to showcase how to run the code
+      that has been reused and modified successfully by others.
       
-    \item Introduction of target directories that showcase how to use templates to run cloudmask benchmarks on various HPC machines, DGX station, and a Linux desktop with an NVIDIA card.
+    \item Introduction of target directories that showcase how to use
+      templates to run cloudmask benchmarks on various HPC machines,
+      DGX station, and a Linux desktop with an NVIDIA card.
 
-    \item Introduction of enhanced timers to measure execution time for different parts of the benchmark program.
+    \item Introduction of enhanced timers to measure execution time
+      for different parts of the benchmark program.
 
-    \item Usage of Cloudmesh StopWatch to provide easy human readable timers that can be parsed with little effort through exports as CSV data.
+    \item Usage of Cloudmesh StopWatch to provide easy human readable
+      timers that can be parsed with little effort through exports as
+      CSV data.
 
-    \item Development and usage of a hyper-parameter permutation framework that enables the cloud mask model to be experimented with different hyper-parameters, including epochs, batch sizes, learning rates, etc. This work is also reused in other MLCommons Science Benchmarks \cite{las22-cloudmesh-cc-reu}. The work simplies benchmark results following the FAIR principal while integrating the hyperparameters as metadata.
+    \item Development and usage of a hyper-parameter permutation
+      framework that enables the cloud mask model to be experimented
+      with different hyper-parameters, including epochs, batch sizes,
+      learning rates, etc. This work is also reused in other MLCommons
+      Science Benchmarks \cite{las22-cloudmesh-cc-reu}. The work
+      simplies benchmark results following the FAIR principal while
+      integrating the hyperparameters as metadata.
 
-    \item Development of a workflow system that enables the use of hybrid compute resources through templates \cite{las-2023-escience-cloudmask}.
+    \item Development of a workflow system that enables the use of
+      hybrid compute resources through templates
+      \cite{las-2023-escience-cloudmask}.
 
-    \item Application of the aforementioned work to education \cite{las-2023-mlcommons-edu-eq}.
+    \item Application of the aforementioned work to education
+      \cite{las-2023-mlcommons-edu-eq}.
 
-    \item Hosting of a development repository for MLCommons Cloud Mask Benchmark code base, as part of MLCommons Science Working Group \cite{github-laszewsk-mlcommons}.
+    \item Hosting of a development repository for MLCommons Cloud Mask
+      Benchmark code base, as part of MLCommons Science Working Group
+      \cite{github-laszewsk-mlcommons}.
 
     \item Execution of a substantial number of benchmark experiments.
 
 \end{enumerate}
 
-\item A number of activities by New York University ("NYU") AI for Scientific Research (AIFSR) Benchmark Team on Greene, NYU High Performance Computing Cluster. 
+\item A number of activities by New York University ("NYU") AI for
+  Scientific Research (AIFSR) Benchmark Team on Greene, NYU High
+  Performance Computing Cluster.
 
-    \begin{enumerate}
-        \item Modification of reference implementation to include early stoppage into model training, built onto the activities from Rutherford Labs and UVA.
-        \item Implementation of a new accuracy metric introduced by Samuel Jackson, Juri Papaya, and Gregor von Laszewski.
-        \item Coordinated the benchmark experiments with bash script that replicates a small number of features from the previous more comprehensive activity conducted by Gregor von Laszewski.
-    \end{enumerate}
+  \begin{enumerate}
+    
+  \item Modification of reference implementation to include early
+    stoppage into model training, built onto the activities from
+    Rutherford Labs and UVA.
 
-NYU AIFSR's benchmark activity contains a limited number of experiments in contrast to the activity done by Gregor von Laszewski. A joint report of both efforts is under preparation. Several versions of the report were started such as \cite{las23-cloudmask}. The latest report is not yet available.
+  \item Implementation of a new accuracy metric introduced by Samuel
+    Jackson, Juri Papaya, and Gregor von Laszewski.
+
+  \item Coordinated the benchmark experiments with bash script that
+    replicates a small number of features from the previous more
+    comprehensive activity conducted by Gregor von Laszewski.
+
+        \end{enumerate}
+
+        NYU AIFSR's benchmark activity contains a limited number of
+        experiments in contrast to the activity done by Gregor von
+        Laszewski. A joint report of both efforts is under
+        preparation. Several versions of the report were started such
+        as \cite{las23-cloudmask}. The latest report is not yet
+        available.
 
 \end{enumerate}
 
@@ -183,17 +232,71 @@ NYU AIFSR's benchmark activity contains a limited number of experiments in contr
 \section{Overview of Cloud Mask and its Related Work}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Since last century, several methods have been developed for cloud masking, ranging from rule-based techniques \cite{Saunders1986AnAS,Saunders1988AnIM,Merchant2005ProbabilisticPB, Zhu2012ObjectbasedCA} to modern deep learning approaches \cite{Li2019DeepLB,Domnich2021KappaMaskAC,Yan2018CloudAC,WIELAND2019111203,JEPPESEN2019247}. Among the more traditional, rule-based techniques, two popular methodologies have been threshold cloud screening \cite{Saunders1986AnAS,Saunders1988AnIM} and Bayesian cloud masking \cite{Merchant2005ProbabilisticPB}. 
+Since last century, several methods have been developed for cloud
+masking, ranging from rule-based techniques
+\cite{Saunders1986AnAS,Saunders1988AnIM,Merchant2005ProbabilisticPB,
+  Zhu2012ObjectbasedCA} to modern deep learning approaches
+\cite{Li2019DeepLB,Domnich2021KappaMaskAC,Yan2018CloudAC,WIELAND2019111203,JEPPESEN2019247}. Among
+the more traditional, rule-based techniques, two popular methodologies
+have been threshold cloud screening
+\cite{Saunders1986AnAS,Saunders1988AnIM} and Bayesian cloud masking
+\cite{Merchant2005ProbabilisticPB}.
 
-Threshold screening methods consist of several threshold tests where spectral and spatial properties of satellite images are compared with those ranges that are believed to indicate the presence of a clear sky pixel. And those other pixels that are not labeled as clear sky are then flagged as cloudy. This school of methodologies were widely used from the late 1980s to the early 2000s \cite{Merchant2005ProbabilisticPB}. 
+Threshold screening methods consist of several threshold tests where
+spectral and spatial properties of satellite images are compared with
+those ranges that are believed to indicate the presence of a clear sky
+pixel. And those other pixels that are not labeled as clear sky are
+then flagged as cloudy. This school of methodologies were widely used
+from the late 1980s to the early 2000s
+\cite{Merchant2005ProbabilisticPB}.
 
-The gradual transition away from threshold screening methods was due to its long-criticized limitations: firstly, threshold settings rely heavily on domain expertise about indicators of cloudiness that may not be objective, which also makes later modification and updates difficult; secondly, thresholds provide users little flexibility in the trade-off between coverage and accuracy; third, threshold tests do not make use of all available prior information. These shortcomings of threshold screening methods are improved by later developed Bayesian methods \cite{Merchant2005ProbabilisticPB}.
+The gradual transition away from threshold screening methods was due
+to its long-criticized limitations: firstly, threshold settings rely
+heavily on domain expertise about indicators of cloudiness that may
+not be objective, which also makes later modification and updates
+difficult; secondly, thresholds provide users little flexibility in
+the trade-off between coverage and accuracy; third, threshold tests do
+not make use of all available prior information. These shortcomings of
+threshold screening methods are improved by later developed Bayesian
+methods \cite{Merchant2005ProbabilisticPB}.
 
-The Bayesian approach applies Bayes' theorem on prior meteorology information to deduce for each pixel the probability of containing cloud or clear sky, and thereafter generating a cloud mask as output. As a result, these Bayesian approaches are fully probabilistic and make good use of prior information. Compared to threshold tests, Bayesian methods achieve better accuracy in predicting pixels' cloudiness, offering generality and conceptual clarity in its approach, and enhancing maintainability and adaptability largely \cite{Merchant2005ProbabilisticPB}. 
+The Bayesian approach applies Bayes' theorem on prior meteorology
+information to deduce for each pixel the probability of containing
+cloud or clear sky, and thereafter generating a cloud mask as
+output. As a result, these Bayesian approaches are fully probabilistic
+and make good use of prior information. Compared to threshold tests,
+Bayesian methods achieve better accuracy in predicting pixels'
+cloudiness, offering generality and conceptual clarity in its
+approach, and enhancing maintainability and adaptability largely
+\cite{Merchant2005ProbabilisticPB}.
 
-More recently, the rising popularity of deep learning has led to the use of CNNs for generating cloud masks. Deep learning methods \cite{Li2019DeepLB,Domnich2021KappaMaskAC,Yan2018CloudAC,WIELAND2019111203,JEPPESEN2019247} use computer vision models (CNNs) and treat the cloud mask task as that of image segmentation tasks. CNNs have achieved superior performance thanks to their automatic feature extraction ability. A research paper published in 2019 \cite{JEPPESEN2019247} introduces Remote Sensing Network (RS-Net), which is a CNN architecture branched out of U-Net \cite{RFB15a} for cloud masking and was shown to achieve higher performance compared to the state-of-the-art rule-based approach known as Fmask \cite{Zhu2012ObjectbasedCA}. KappaMask \cite{Domnich2021KappaMaskAC} and MSCFF \cite{Li2019DeepLB} are two additional U-Net based CNN model that outperformed Fmask. All these models have reported their performances on several satellite images such as Sentinel-2, Landsat, etc., and also made use of human-annotated (some assisted by software) ground truth values (See in Table \ref{tab:datasets}). On the other hand, MLCommons Cloud Mask Benchmark operates on SLSTR images from the newer Sentinel-3 satellite, which uses Bayesian approach generated cloud masks as ground truth. The reference implementation provided by MLCommons Science Working Group achieved 92\% classification accuracy on the Sentinel-3 test set \cite{Thiyagalingam2022AIBF}.
+More recently, the rising popularity of deep learning has led to the
+use of CNNs for generating cloud masks. Deep learning methods
+\cite{Li2019DeepLB,Domnich2021KappaMaskAC,Yan2018CloudAC,WIELAND2019111203,JEPPESEN2019247}
+use computer vision models (CNNs) and treat the cloud mask task as
+that of image segmentation tasks. CNNs have achieved superior
+performance thanks to their automatic feature extraction ability. A
+research paper published in 2019 \cite{JEPPESEN2019247} introduces
+Remote Sensing Network (RS-Net), which is a CNN architecture branched
+out of U-Net \cite{RFB15a} for cloud masking and was shown to achieve
+higher performance compared to the state-of-the-art rule-based
+approach known as Fmask \cite{Zhu2012ObjectbasedCA}. KappaMask
+\cite{Domnich2021KappaMaskAC} and MSCFF \cite{Li2019DeepLB} are two
+additional U-Net based CNN model that outperformed Fmask. All these
+models have reported their performances on several satellite images
+such as Sentinel-2, Landsat, etc., and also made use of
+human-annotated (some assisted by software) ground truth values (See
+in Table \ref{tab:datasets}). On the other hand, MLCommons Cloud Mask
+Benchmark operates on SLSTR images from the newer Sentinel-3
+satellite, which uses Bayesian approach generated cloud masks as
+ground truth. The reference implementation provided by MLCommons
+Science Working Group achieved 92\% classification accuracy on the
+Sentinel-3 test set \cite{Thiyagalingam2022AIBF}.
 
-The aforementioned deep learning approaches towards cloud masking are by no means exhaustive. If you know about other significant cloud masking or deep learning approaches, please inform us and we will add them here. 
+The aforementioned deep learning approaches towards cloud masking are
+by no means exhaustive. If you know about other significant cloud
+masking or deep learning approaches, please inform us and we will add
+them here.
 
 \begin{table*}[htb]
     \centering
@@ -242,10 +345,10 @@ Sentinel-3 makes use of multiple sensing instruments to accomplish its objective
 ``SLSTR and OLCI are optical instruments that are used to provide data continuity for ENVISAT's AATSR and MERIS instruments and the swaths of the two instruments overlap, allowing for new combined applications. OLCI is a medium-resolution imaging spectrometer, using five cameras to provide a wide field of view.
 SRAL, DORIS, MWR and LRR are used for topographic measurements of the ocean and inland water.'' \cite{Sentinel84:online}
 
-One of the satellites is shown in Figure~\ref{fig:sat}. The 
-Mission Orbit is 
-sun-synchronous, set at a height of  814.5km
-with an inclination of 98.65$^{o}$ and a repeat cycle of 27 days \cite{Sentinel84:online}.
+One of the satellites is shown in Figure~\ref{fig:sat}. The Mission
+Orbit is sun-synchronous, set at a height of 814.5km with an
+inclination of 98.65$^{o}$ and a repeat cycle of 27 days
+\cite{Sentinel84:online}.
 
 
 \begin{figure}[htb]
@@ -256,10 +359,24 @@ with an inclination of 98.65$^{o}$ and a repeat cycle of 27 days \cite{Sentinel8
 
 \subsection{MLCommons Cloud Mask Dataset}
 
-MLCommons Cloud Mask Benchmark uses 180GB of satellite images from Sentinel-3 SLSTR (Level-1 processing, TOA Radiances and Brightness Temperature) satellite images. The dataset consists of 1070 images, captured during days and nights. The dataset also includes a cloud mask for each image, generated using Bayesian techniques. The reference implementation uses these cloud masks as ground truths for training and testing.
+MLCommons Cloud Mask Benchmark uses 180GB of satellite images from
+Sentinel-3 SLSTR (Level-1 processing, TOA Radiances and Brightness
+Temperature) satellite images. The dataset consists of 1070 images,
+captured during days and nights. The dataset also includes a cloud
+mask for each image, generated using Bayesian techniques. The
+reference implementation uses these cloud masks as ground truths for
+training and testing.
 
-The dataset comes with the train-test split, where 970 images are used for training, and 100 images are used for testing. 
-The images are of the dimension $1200 \times 1500$ with 15 different channels and 1 channel of Bayesian mask. Among the 15 channels, 3 channels are used to represent brightness, 6 channels are used to represent reflectance, and the remaining 6 channels are used to represent radiance. However, for the provided reference implementation, only a total of 10 channels, i.e., 6 channels of reflectance, 3 channels of brightness, and 1 channel of Bayesian mask are used as model inputs for training and testing. 
+The dataset comes with the train-test split, where 970 images are used
+for training, and 100 images are used for testing.  The images are of
+the dimension $1200 \times 1500$ with 15 different channels and 1
+channel of Bayesian mask. Among the 15 channels, 3 channels are used
+to represent brightness, 6 channels are used to represent reflectance,
+and the remaining 6 channels are used to represent radiance. However,
+for the provided reference implementation, only a total of 10
+channels, i.e., 6 channels of reflectance, 3 channels of brightness,
+and 1 channel of Bayesian mask are used as model inputs for training
+and testing.
 
 \begin{figure*}[htb]
 
@@ -278,21 +395,58 @@ The images are of the dimension $1200 \times 1500$ with 15 different channels an
 
 \subsection{Data Loading and Preprocessing} \label{Preprocessing}
 
-For training data preprocessing, the images are first cropped from the dimension of $1200 \times 1500 \times 9$ to $1024 \times 1280 \times 9$ and then divided into 20 smaller-sized $256 \times 256 \times 9$ patches. After creating these patches out of each image in training set, we get a total of $19400$ patches for training. These patches are further split into training and validation set with $80/20$ split ratio, and then sent for training after shuffling. 
+For training data preprocessing, the images are first cropped from the
+dimension of $1200 \times 1500 \times 9$ to
+$1024 \times 1280 \times 9$ and then divided into 20 smaller-sized
+$256 \times 256 \times 9$ patches. After creating these patches out of
+each image in training set, we get a total of $19400$ patches for
+training. These patches are further split into training and validation
+set with $80/20$ split ratio, and then sent for training after
+shuffling.
 
-For the test dataset, the images are neither cropped nor shuffled. Instead, each test image are cut into 63 smaller patches of dimension $256 \times 256 \times 9$, by applying a horizontal and vertical stride of 176 pixels with zeros padding on the right and bottom edges of each image. We then get a total of $6300$ patches for entire test dataset. After getting the predictions from the model, these $256 \times 256 \times 1$ output patches (predicted cloud mask) are reconstructed to the size of $1200 \times 1500 \times 1$ and then evaluated with the Bayesian mask ground truth that has the same dimension. This preprocessing pipelines for training and testing are shown in Figure \ref{fig:preprocessing-training} and Figure \ref{fig:preprocessing-testing}.
+For the test dataset, the images are neither cropped nor
+shuffled. Instead, each test image are cut into 63 smaller patches of
+dimension $256 \times 256 \times 9$, by applying a horizontal and
+vertical stride of 176 pixels with zeros padding on the right and
+bottom edges of each image. We then get a total of $6300$ patches for
+entire test dataset. After getting the predictions from the model,
+these $256 \times 256 \times 1$ output patches (predicted cloud mask)
+are reconstructed to the size of $1200 \times 1500 \times 1$ and then
+evaluated with the Bayesian mask ground truth that has the same
+dimension. This preprocessing pipelines for training and testing are
+shown in Figure \ref{fig:preprocessing-training} and Figure
+\ref{fig:preprocessing-testing}.
 
 \subsection{Training}
 
-During training, the model takes a preprocessed patch of dimension $256 \times 256 \times 9$, and generates a cloud mask of dimension $256 \times 256 \times 1$. Once the cloud masks have been generated by the model during training, the accuracy is reported as the percentage of total pixels that are correctly classified compared to ground truth. 
+During training, the model takes a preprocessed patch of dimension
+$256 \times 256 \times 9$, and generates a cloud mask of dimension
+$256 \times 256 \times 1$. Once the cloud masks have been generated by
+the model during training, the accuracy is reported as the percentage
+of total pixels that are correctly classified compared to ground
+truth.
 
 \subsection{Testing}
 
-During testing, the model generates a cloud mask of dimension $256 \times 256 \times 1$ for each $256 \times 256 \times 9$ patch. For each pixel in the image, the model outputs the probability of that pixel containing clear sky. Pixels that have a probability higher than 50\% are labeled as clear sky, and cloudy otherwise. Then, those patches are then reconstructed back to full-size masks of dimension $1200 \times 1500 \times 1$. 
+During testing, the model generates a cloud mask of dimension
+$256 \times 256 \times 1$ for each $256 \times 256 \times 9$
+patch. For each pixel in the image, the model outputs the probability
+of that pixel containing clear sky. Pixels that have a probability
+higher than 50\% are labeled as clear sky, and cloudy otherwise. Then,
+those patches are then reconstructed back to full-size masks of
+dimension $1200 \times 1500 \times 1$.
 
-The locations of the images used in the testing are depicted in Figure~\ref{fig:frames-inference} as well as their coordinate centers in Figure~\ref{fig:frames-dot}. As one can observe from the figures, most of the testing images are captured in the region of North Altantic Ocean and of the West Coast of Europe.
-Furthermore, we display in Figure \ref{fig:frames-raw} the raw satellite images from the Sentinel-3 database that reflect the locations where the testing images are located. Figure \ref{fig:frames-mask} shows the cloud masks of the testing images.
-The Table \ref{tab:inference} shows the individual attributes for the specific locations identified by a counter.
+The locations of the images used in the testing are depicted in
+Figure~\ref{fig:frames-inference} as well as their coordinate centers
+in Figure~\ref{fig:frames-dot}. As one can observe from the figures,
+most of the testing images are captured in the region of North
+Altantic Ocean and of the West Coast of Europe.  Furthermore, we
+display in Figure \ref{fig:frames-raw} the raw satellite images from
+the Sentinel-3 database that reflect the locations where the testing
+images are located. Figure \ref{fig:frames-mask} shows the cloud masks
+of the testing images.  The Table \ref{tab:inference} shows the
+individual attributes for the specific locations identified by a
+counter.
 
 \begin{figure*}[htb]
 \centering\includegraphics[width=0.75\textwidth]{images/inference-frames.pdf}
@@ -323,12 +477,28 @@ The Table \ref{tab:inference} shows the individual attributes for the specific l
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In this paper, we provide a list of related activities under MLCommons Cloud Mask Benchmark. The paper includes an overview of related research in the field of cloud masking in general. In addition, the paper provides a walk-through and illustration of the Sentinel-3 satellite image dataset used for MLCommons Cloud Mask Benchmark. With this paper, we hope to enhance communication between activities on this benchmark and support others to have an easier time getting started with the MLCommons Cloud Mask benchmark.
+In this paper, we provide a list of related activities under MLCommons
+Cloud Mask Benchmark. The paper includes an overview of related
+research in the field of cloud masking in general. In addition, the
+paper provides a walk-through and illustration of the Sentinel-3
+satellite image dataset used for MLCommons Cloud Mask Benchmark. With
+this paper, we hope to enhance communication between activities on
+this benchmark and support others to have an easier time getting
+started with the MLCommons Cloud Mask benchmark.
 
 \begin{acks}
 
-Work was in part funded by (a) NIST 60NANB21D151T  (b) NSF CyberTraining: CIC: CyberTraining for Students and Technologies from Generation Z with the award numbers 1829704 and 2200409 and NIST 60NANB21D151T, and (c) Department of Energy under the grant Award No. DE-SC0023452. The work from the UVA team was conducted at the Biocomplexity Institute and Initiative at the University of Virginia.
-We like to thank the NYU AIFSR team for their contributions. We especially like to thank Ruochen Gu who continued to work on this project on voluntary basis.
+  Work was in part funded by (a) NIST 60NANB21D151T (b) NSF
+  CyberTraining: CIC: CyberTraining for Students and Technologies from
+  Generation Z with the award numbers 1829704 and 2200409, and (c)
+  Department of Energy under the grant Award No. DE-SC0023452 (d) NSF
+  Collaborative Research: Framework: Software: CINES: A Scalable
+  Cyberinfrastructure for Sustained Innovation in Network Engineering
+  and Science with the award number 2210266. The work from the UVA
+  team was conducted at the Biocomplexity Institute at
+  the University of Virginia.  We like to thank the NYU AIFSR team for
+  their contributions. We especially like to thank Ruochen Gu who
+  continued to work on this project on voluntary basis.
 
 
 \end{acks}
@@ -348,7 +518,17 @@ We like to thank the NYU AIFSR team for their contributions. We especially like 
 
 \section*{Contributions}
 
-Ruochen Gu has conducted the work of identifying related research as a student researcher from NYU AIFSR Benchmark Team. He continued this work on a voluntary basis due to his interest in this project. {\em GvL} has contributed significantly to porting cloudmask onto different machines while making the code portable and contributed the cloudmesh-ee workflow code, the cloudmesh StopWatch, and integrated the cloudmesh timers and logging, into the code. He ran all benchmarks on Rivanna and the Desktop.   In discussions with Rutherford Lab, a new accuracy value was introduced that was not included in the original version distributed by MLCommons. He also facilitated many hackathons with the NYU team. The work described here is cited in the NYU report.
+Ruochen Gu has conducted the work of identifying related research as a
+student researcher from NYU AIFSR Benchmark Team. He continued this
+work on a voluntary basis due to his interest in this project. {\em
+  GvL} has contributed significantly to porting cloudmask onto
+different machines while making the code portable and contributed the
+cloudmesh-ee workflow code, the cloudmesh StopWatch, and integrated
+the cloudmesh timers and logging, into the code. He ran all benchmarks
+on Rivanna and the Desktop.  In discussions with Rutherford Lab, a new
+accuracy value was introduced that was not included in the original
+version distributed by MLCommons. He also facilitated many hackathons
+with the NYU team. The work described here is cited in the NYU report.
 
 \begin{comment}
 \section{FINDS Sentinel-3}
@@ -657,11 +837,4 @@ S3A_SL_1_RBT____20191031T231742_20191031T232042_20191102T034613_0179_051_073_054
 %%
 %% End of file `sample-sigplan.tex'.
 
-Warning--page numbers missing in both pages and numpages fields in Domnich2021KappaMaskAC
-
-Warning--no journal in Farrell2021MLPerfHA
-
-Warning--no number and no volume in Farrell2021MLPerfHA
-
-Warning--page numbers missing in both pages and numpages fields in Merchant2005ProbabilisticPB
 
