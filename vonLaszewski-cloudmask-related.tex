@@ -7,7 +7,7 @@
 %\acmYear{2018}
 %\acmDOI{XXXXXXX.XXXXXXX}
 
-\acmConference[MLCommons Science Working Group Report]{MLCommons Cloud Masking Benchmark with Early Stoppage }{Jun. 30,  revised 9 Dec. 2023}{}
+%\acmConference[MLCommons Science Working Group Report]{MLCommons Cloud Masking Benchmark with Early Stopping }{Jun. 30,  revised 9 Dec. 2023}{}
 
 %\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
 %  June 03--05, 2018, Woodstock, NY} 
@@ -20,9 +20,9 @@
 
 \begin{document}
 
-\newcommand{\TITLE}{An Overview of MLCommons Cloud Mask Benchmark: \\ Related Research and Data \\ {\normalsize Version 1.1}}
+\newcommand{\TITLE}{An Overview of MLCommons Cloud Masking Benchmark: \\ Related Research and Data \\ {\normalsize Version 1.1}}
 
-\title[Overview of MLCommons Cloud Mask: Related Research]{\TITLE}
+\title[Overview of MLCommons Cloud Masking: Related Research]{\TITLE}
 % \titlenote{\url{https://github.com/laszewski/papers/raw/master/vonLaszewski-cloudmask-related.pdf}, \url{https://arxiv.org/submit/5278659/view}}
 \titlenote{\url{https://github.com/laszewski/papers/raw/master/vonLaszewski-cloudmask-related.pdf}}
 
@@ -65,7 +65,7 @@ Town Center Four\\
   research and benchmark currently conducted in MLCommons Science
   Working Group.  This overview is produced with the hope that others
   will have an easier time getting started and collaborate on the
-  activities related to MLCommons Cloud Mask Benchmark.
+  activities related to MLCommons Cloud Masking Benchmark.
 
 \end{abstract}
 
@@ -129,12 +129,12 @@ Town Center Four\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{MLCommons Cloud Mask Activities}
+\section{MLCommons Cloud Masking Activities}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \nocite{las-2023-ai-workflow} % add to avoid running bibtex multiple times
 
-The Cloud Mask Benchmark is part of the research currently conducted
+The Cloud Masking Benchmark is part of the research currently conducted
 by MLCommons \cite{Farrell2021MLPerfHA} Science Working Group
 \cite{www-mlcommons-science-github}.  We hope that others will
 contribute to this document to enhance its scope. Please contact
@@ -142,7 +142,7 @@ Gregor von Laszewski (laszewski@gmail.com) so that we can coordinate
 with you.
 
 As of this moment, we are aware of several activities regarding
-MLCommons Cloud Mask Benchmark.
+MLCommons Cloud Masking Benchmark.
 
 
 \begin{enumerate}
@@ -152,7 +152,7 @@ MLCommons Cloud Mask Benchmark.
   Rutherford Labs.  The reference implementation is based on U-Net
   \cite{RFB15a}.
 
-\item A cloud mask benchmark activity by Junji Yin on PEARL
+\item A cloud masking benchmark activity by Junji Yin on PEARL
   \cite{Thiyagalingam2022AIBF}.
 
 \item A number of activities carried out by Gregor von Laszewski on
@@ -176,7 +176,7 @@ MLCommons Cloud Mask Benchmark.
       CSV data.
 
     \item Development and usage of a hyper-parameter permutation
-      framework that enables the cloud mask model to be experimented
+      framework that enables the cloud masking model to be experimented
       with different hyper-parameters, including epochs, batch sizes,
       learning rates, etc. This work is also reused in other MLCommons
       Science Benchmarks \cite{las22-cloudmesh-cc-reu}. The work
@@ -190,7 +190,7 @@ MLCommons Cloud Mask Benchmark.
     \item Application of the aforementioned work to education
       \cite{las-2023-mlcommons-edu-eq}.
 
-    \item Hosting of a development repository for MLCommons Cloud Mask
+    \item Hosting of a development repository for MLCommons Cloud Masking
       Benchmark code base, as part of MLCommons Science Working Group
       \cite{github-laszewsk-mlcommons}.
 
@@ -205,7 +205,7 @@ MLCommons Cloud Mask Benchmark.
   \begin{enumerate}
     
   \item Modification of reference implementation to include early
-    stoppage into model training, built onto the activities from
+    stopping into model training, built onto the activities from
     Rutherford Labs and UVA.
 
   \item Implementation of a new accuracy metric introduced by Samuel
@@ -228,7 +228,7 @@ MLCommons Cloud Mask Benchmark.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Overview of Cloud Mask and its Related Work}
+\section{Overview of Cloud Masking and its Related Work}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Since last century, several methods have been developed for cloud
@@ -272,7 +272,7 @@ approach, and enhancing maintainability and adaptability largely
 More recently, the rising popularity of deep learning has led to the
 use of CNNs for generating cloud masks. Deep learning methods
 \cite{Li2019DeepLB,Domnich2021KappaMaskAC,Yan2018CloudAC,WIELAND2019111203,JEPPESEN2019247}
-use computer vision models (CNNs) and treat the cloud mask task as
+use computer vision models (CNNs) and treat the cloud masking task as
 that of image segmentation tasks. CNNs have achieved superior
 performance thanks to their automatic feature extraction ability. A
 research paper published in 2019 \cite{JEPPESEN2019247} introduces
@@ -285,7 +285,7 @@ additional U-Net based CNN model that outperformed Fmask. All these
 models have reported their performances on several satellite images
 such as Sentinel-2, Landsat, etc., and also made use of
 human-annotated (some assisted by software) ground truth values (See
-in Table \ref{tab:datasets}). On the other hand, MLCommons Cloud Mask
+in Table \ref{tab:datasets}). On the other hand, MLCommons Cloud Masking
 Benchmark operates on SLSTR images from the newer Sentinel-3
 satellite, which uses Bayesian approach generated cloud masks as
 ground truth. The reference implementation provided by MLCommons
@@ -323,7 +323,7 @@ them here.
 \section{Dataset} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-For MLCommons Cloud Mask Benchmark, we use the satellite images from Sentinel-3. 
+For MLCommons Cloud Masking Benchmark, we use the satellite images from Sentinel-3. 
 
 \subsection{Sentinel-3}
 
@@ -356,13 +356,13 @@ inclination of 98.65$^{o}$ and a repeat cycle of 27 days
 \label{fig:sat}
 \end{figure}
 
-\subsection{MLCommons Cloud Mask Dataset}
+\subsection{MLCommons Cloud Masking Dataset}
 
-MLCommons Cloud Mask Benchmark uses 180GB of satellite images from
+MLCommons Cloud Masking Benchmark uses 180GB of satellite images from
 Sentinel-3 SLSTR (Level-1 processing, TOA Radiances and Brightness
 Temperature) satellite images. The dataset consists of 1070 images,
 captured during days and nights. The dataset also includes a cloud
-mask for each image, generated using Bayesian techniques. The
+masking for each image, generated using Bayesian techniques. The
 reference implementation uses these cloud masks as ground truths for
 training and testing.
 
@@ -477,13 +477,13 @@ counter.
 
 
 In this paper, we provide a list of related activities under MLCommons
-Cloud Mask Benchmark. The paper includes an overview of related
+Cloud Masking Benchmark. The paper includes an overview of related
 research in the field of cloud masking in general. In addition, the
 paper provides a walk-through and illustration of the Sentinel-3
-satellite image dataset used for MLCommons Cloud Mask Benchmark. With
+satellite image dataset used for MLCommons Cloud Masking Benchmark. With
 this paper, we hope to enhance communication between activities on
 this benchmark and support others to have an easier time getting
-started with the MLCommons Cloud Mask benchmark.
+started with the MLCommons Cloud Masking benchmark.
 
 \begin{acks}
 
