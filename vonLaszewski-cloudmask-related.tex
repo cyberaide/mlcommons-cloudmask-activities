@@ -245,7 +245,7 @@ Threshold screening methods consist of several threshold tests where
 spectral and spatial properties of satellite images are compared with
 those ranges that are believed to indicate the presence of a clear sky
 pixel. And those other pixels that are not labeled as clear sky are
-then flagged as cloudy. This school of methodologies were widely used
+then flagged as cloudy. This school of methodologies was widely used
 from the late 1980s to the early 2000s
 \cite{Merchant2005ProbabilisticPB}.
 
@@ -394,27 +394,9 @@ and testing.
 
 \subsection{Data Loading and Preprocessing} \label{Preprocessing}
 
-For training data preprocessing, the images are first cropped from the
-dimension of $1200 \times 1500 \times 9$ to
-$1024 \times 1280 \times 9$ and then divided into 20 smaller-sized
-$256 \times 256 \times 9$ patches. After creating these patches out of
-each image in training set, we get a total of $19400$ patches for
-training. These patches are further split into training and validation
-set with $80/20$ split ratio, and then sent for training after
-shuffling.
+For training data preprocessing, the images are first cropped from the dimension of $1200 \times 1500 \times 9$ to $1024 \times 1280 \times 9$ and then divided into 20 smaller-sized $256 \times 256 \times 9$ patches. After creating these patches out of each image in the training set, we get a total of $19400$ patches for training. These patches are further split into training and validation sets with $80/20$ split ratio, and then sent for training after shuffling. 
 
-For the test dataset, the images are neither cropped nor
-shuffled. Instead, each test image are cut into 63 smaller patches of
-dimension $256 \times 256 \times 9$, by applying a horizontal and
-vertical stride of 176 pixels with zeros padding on the right and
-bottom edges of each image. We then get a total of $6300$ patches for
-entire test dataset. After getting the predictions from the model,
-these $256 \times 256 \times 1$ output patches (predicted cloud mask)
-are reconstructed to the size of $1200 \times 1500 \times 1$ and then
-evaluated with the Bayesian mask ground truth that has the same
-dimension. This preprocessing pipelines for training and testing are
-shown in Figure \ref{fig:preprocessing-training} and Figure
-\ref{fig:preprocessing-testing}.
+For the test dataset, the images are neither cropped nor shuffled. Instead, each test image is cut into 63 smaller patches of dimension $256 \times 256 \times 9$, by applying a horizontal and vertical stride of 176 pixels with zeros padding on the right and bottom edges of each image. We then get a total of $6300$ patches for the entire test dataset. After getting the predictions from the model, these $256 \times 256 \times 1$ output patches (predicted cloud mask) are reconstructed to the size of $1200 \times 1500 \times 1$ and then evaluated with the Bayesian mask ground truth that has the same dimension. This preprocessing pipelines for training and testing are shown in Figure \ref{fig:preprocessing-training} and Figure \ref{fig:preprocessing-testing}.
 
 \subsection{Training}
 
@@ -430,7 +412,7 @@ truth.
 During testing, the model generates a cloud mask of dimension
 $256 \times 256 \times 1$ for each $256 \times 256 \times 9$
 patch. For each pixel in the image, the model outputs the probability
-of that pixel containing clear sky. Pixels that have a probability
+of that pixel containing a clear sky. Pixels that have a probability
 higher than 50\% are labeled as clear sky, and cloudy otherwise. Then,
 those patches are then reconstructed back to full-size masks of
 dimension $1200 \times 1500 \times 1$.
